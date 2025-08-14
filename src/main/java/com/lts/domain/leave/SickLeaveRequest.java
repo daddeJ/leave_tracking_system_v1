@@ -10,7 +10,7 @@ public class SickLeaveRequest extends LeaveRequest {
         super(requestId, employee, startDate, endDate, reason);
         this._medicalCertificateProvided = medicalCertificateProvided;
     }
-
+    
     public boolean isMedicalCertificateProvided() {
         return this._medicalCertificateProvided;
     }

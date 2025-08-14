@@ -18,7 +18,7 @@ public abstract class LeaveRequest implements Approvable{
     private String _endDate;
     private LeaveStatus _status;
     private String _reason;
-    private ArrayList<StatusChange> statusHistory = new ArrayList<>();
+    private ArrayList<StatusChange> _statusHistory = new ArrayList<>();
 
     public LeaveRequest(int requestId, Employee employee, String startDate,
                         String endDate, String reason) {
@@ -29,7 +29,7 @@ public abstract class LeaveRequest implements Approvable{
         this._status = LeaveStatus.PENDING;
         this._reason = reason;
     }
-
+    
     public void setRequestId(int requestId) {
         this._requestId = requestId;
     }
@@ -113,7 +113,7 @@ public abstract class LeaveRequest implements Approvable{
         this._status = newStatus;
 
         StatusChange change = new StatusChange(olStatus, newStatus, getCurrentDate(), changeBy);
-        statusHistory.add(change);
+        _statusHistory.add(change);
     }
 
     public String getCurrentDate() {

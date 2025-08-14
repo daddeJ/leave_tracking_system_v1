@@ -14,6 +14,20 @@ public class MaternityLeaveRequest extends LeaveRequest{
         this._maternityLeaveType = maternityLeaveType;
         this._isEmergency = isEmergency;
     }
+
+    public void setIsEmergency(boolean isEmergency) {
+        this._isEmergency = isEmergency;
+    }
+    public void setMaternirtLeaveTpye(MaternityLeaveType maternityLeaveType) {
+        this._maternityLeaveType = maternityLeaveType;
+    }
+
+    public boolean getIsEmergency() {
+        return this._isEmergency;
+    }
+    public MaternityLeaveType setMaternirtLeaveTpye() {
+        return this._maternityLeaveType;
+    }
     
     @Override
     public boolean proceessRequest() {

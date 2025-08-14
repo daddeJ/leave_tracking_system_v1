@@ -27,6 +27,13 @@ public class Employee {
     public void setEmail(String email) {
         this._email = email;
     }
+    public void setLeaveBalance(int leaveBalance) {
+        if (leaveBalance >= 0) {
+            this._leaveBalance = leaveBalance;
+        } else {
+            System.out.println("Leave balance cannot be negative.");
+        }
+    }
 
     public int getEmployeeId() {
         return this._employeeId;
@@ -40,17 +47,8 @@ public class Employee {
     public String getEmail() {
         return this._email;
     }
-
     public int getLeaveBalance() {
         return this._leaveBalance;
-    }
-
-    public void setLeaveBalance(int leaveBalance) {
-        if (leaveBalance >= 0) {
-            this._leaveBalance = leaveBalance;
-        } else {
-            System.out.println("Leave balance cannot be negative.");
-        }
     }
 
     public String toString() {
