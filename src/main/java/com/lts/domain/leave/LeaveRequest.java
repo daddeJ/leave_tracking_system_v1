@@ -7,9 +7,9 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
+import domain.enums.LeaveStatus;
 import domain.models.Employee;
 import domain.port.Approvable;
-import domain.status.LeaveStatus;
 
 public abstract class LeaveRequest implements Approvable{
     private int _requestId;
@@ -26,8 +26,46 @@ public abstract class LeaveRequest implements Approvable{
         this._employee = employee;
         this._startDate = startDate;
         this._endDate = endDate;
-        this._status = LeaveStatus.Pending;
+        this._status = LeaveStatus.PENDING;
         this._reason = reason;
+    }
+
+    public void setRequestId(int requestId) {
+        this._requestId = requestId;
+    }
+    public void setEmployee(Employee employee) {
+        this._employee = employee;
+    }
+    public void setStartDate(String startDate) {
+        this._startDate = startDate;
+    }
+    public void setEndDate(String endDate) {
+        this._endDate = endDate;
+    }
+    public void setStatus(LeaveStatus status) {
+        this._status = status;
+    }
+    public void setReason(String reason) {
+        this._reason = reason;
+    }
+
+    public int getRequestId() {
+        return this._requestId;
+    }
+    public Employee getEmployee() {
+        return this._employee;
+    }
+    public String getStartDate() {
+        return this._startDate;
+    }
+    public String getEndDate() {
+        return this._endDate;
+    }
+    public LeaveStatus getStatus() {
+        return this._status;
+    }
+    public String getReason() {
+        return this._reason;
     }
     public class StatusChange {
         private LeaveStatus _oldStatus;
@@ -98,6 +136,17 @@ public abstract class LeaveRequest implements Approvable{
         Instant endUtc = endDateLocal.atStartOfDay().toInstant(ZoneOffset.UTC);
 
         return ChronoUnit.DAYS.between(startUtc, endUtc);
+    }
+
+    public long getFiledDuration() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate startDateLocal = LocalDate.parse(getStartDate(), formatter);
+        LocalDate currenDateLocal = LocalDate.now();
+
+        Instant startUtc = startDateLocal.atStartOfDay().toInstant(ZoneOffset.UTC);
+        Instant currentUtc = currenDateLocal.atStartOfDay().toInstant(ZoneOffset.UTC);
+
+        return ChronoUnit.DAYS.between(startUtc, currentUtc);
     }
 
     @Override
