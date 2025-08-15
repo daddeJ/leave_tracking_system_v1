@@ -1,0 +1,11 @@
+1=Alice Johnson,HR,alice.johnson@company.com,HR,20
+2=Bob Smith,IT,bob.smith@company.com,REGULAR,20
+3=Carol Davis,Finance,carol.davis@company.com,REGULAR,20
+4=David Lee,Marketing,david.lee@company.com,REGULAR,20
+5=Emma Wilson,IT,emma.wilson@company.com,REGULAR,20
+6=Frank Brown,Finance,frank.brown@company.com,REGULAR,20
+7=Grace Taylor,Marketing,grace.taylor@company.com,REGULAR,20
+8=Henry Clark,IT,henry.clark@company.com,REGULAR,20
+9=Isabella Lewis,Finance,isabella.lewis@company.com,REGULAR,20
+10=Jack Walker,Marketing,jack.walker@company.com,REGULAR,20
+11=Karen Hall,IT,karen.hall@company.com,REGULAR,20
